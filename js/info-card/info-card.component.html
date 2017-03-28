@@ -1,0 +1,13 @@
+<h1>Gaming Systems</h1>
+<button ng-click="$ctrl.handleClick()">clicker</button>
+
+<ul ng-repeat="system in $ctrl.cards">
+  <li>
+    <p>{{system.title}}</p>
+    <p>{{system.name}}</p>
+    <p>{{system.year}}</p>
+  </li>
+</ul>
+<p>From details: {{$ctrl.thing}}</p>
+
+<info-detail on-update="$ctrl.fromComponent(thing, jason)"></info-detail>
