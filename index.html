@@ -1,19 +1,176 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="gameSystem">
   <head>
-    <title>Angular 1 Components and Controllers</title>
+    <title>myRetail Product Page</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/em-reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
   </head>
   <body>
 
-    <info-card></info-card>
+    <nav class="myr-header" role="banner">
+      <div class="myr-header__logo" aria-label="myRetail Logo">myRetail</div>
+    </nav>
+
+    <div class="myr-base">
+      <div class="myr-container">
+
+        <div class="flex">
+
+          <div class="flex__i--xs-12 flex__i--md-6">
+            <div class="myr-item-name">
+              <h1 class="myr-light">Ninja<sup>&trade;</sup> Professional Blender with Single Servtte Blending Cups</h1>
+            </div>
+
+            <div class="myr-img-carousel">
+              <div class="myr-img">
+                <img src="http://target.scene7.com/is/image/Target/14263758" alt="Product Image 01">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="flex__i--xs-12 flex__i--md-6">
+
+            <div class="myr-cart-pricing">
+              <strong class="myr-cart-pricing__price">$139.99</strong> online price
+            </div>
+
+            <ul class="myr-item-promo">
+              <li data-icon="local_offer">Lorem ipsum dolor.</li>
+              <li data-icon="local_offer">Lorem ipsum dolor sit amet.</li>
+            </ul>
+
+            <div class="myr-counter">
+              <div class="myr-counter__title">quantity</div>
+              <div class="myr-counter__action">
+                <button class="myr-btn myr-btn--circle" data-icon="remove"></button>
+                <div class="myr-action-count"><strong>1</strong></div>
+                <button class="myr-btn myr-btn--circle" data-icon="add"></button>
+              </div>
+            </div>
+
+            <div class="myr-cart-actions">
+              <div class="flex">
+                <div class="flex__i--xs-12 flex__i--sm-6">
+                  <button class="myr-btn myr-btn--block myr-btn--secondary">PICK UP IN STORE</button>
+                  <p class="myr-store-find"><strong>find in a store</strong></p>
+                </div>
+                <div class="flex__i--xs-12 flex__i--sm-6">
+                  <button class="myr-btn myr-btn--block myr-btn--primary">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="myr-rpolicy">
+              <div class="myr-rpolicy__return">returns</div>
+              <div class="myr-divider myr-divider--vertical myr-divider--light"></div>
+              <div class="myr-rpolicy__disclaimer">This item must be returned within 30 days of the ship date. See return policy for details. Prices, promotions, styles and availability may vary by store and online.</div>
+            </div>
+
+            <div class="myr-additional-actions">
+              <div class="flex">
+                <div class="flex__i--xs-12 flex__i--sm-4">
+                  <button class="myr-btn myr-btn--block myr-btn--sm">ADD TO REGISTRY</button>
+                </div>
+                <div class="flex__i--xs-12 flex__i--sm-4">
+                  <button class="myr-btn myr-btn--block myr-btn--sm">ADD TO LIST</button>
+                </div>
+                <div class="flex__i--xs-12 flex__i--sm-4">
+                  <button class="myr-btn myr-btn--block myr-btn--sm">SHARE</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="myr-prd-hl">
+              <div class="myr-prd-hl__title">product highlights</div>
+              <ul class="myr-prd-hl__list">
+                <li>01</li>
+                <li>02</li>
+                <li>03</li>
+                <li>04</li>
+                <li>05</li>
+                <li>06</li>
+                <li>07</li>
+                <li>08</li>
+                <li>09</li>
+                <li>10</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="flex">
+          <div class="flex__i--xs-12 flex__i--md-6">
+            <div class="myr-overall-rating">
+              <div class="flex">
+                <div class="flex__i--xs-6">
+                  <!-- MAKE COMPONENT -->
+                  <div class="myr-star-review myr-star-review--5">
+                    <i class="material-icons">star_rate</i>
+                    <i class="material-icons">star_rate</i>
+                    <i class="material-icons">star_rate</i>
+                    <i class="material-icons">star_rate</i>
+                    <i class="material-icons">star_rate</i>
+                  </div>
+                  <span>overall</span>
+                </div>
+                <div class="flex__i--xs-6 myr-txt-r">
+                  <a href="#">view all 14 reviews</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="myr-review">
+              <div class="myr-review__pc">
+                <div class="flex">
+                  <div class="flex__i--xs-12 flex__i--md-6">
+                    <h3>PRO</h3>
+                    <p>most helpful 4-5 star review</p>
+                    <div class="myr-divider"></div>
+                    <!-- MAKE COMPONENT -->
+                    <div class="myr-star-review myr-star-review--3">
+                      <i class="material-icons">star_rate</i>
+                      <i class="material-icons">star_rate</i>
+                      <i class="material-icons">star_rate</i>
+                      <i class="material-icons">star_rate</i>
+                      <i class="material-icons">star_rate</i>
+                    </div>
+                    <h2><strong>Fantastic Blender</strong></h2>
+                    <p>This blender works amazingly, and blends within seconds. The single serve cups also work really well for smoothies or protein shakes!</p>
+                    <p><span class="myr-reviewer">Eric</span> April 18, 2013</p>
+                  </div>
+                  <div class="flex__i--xs-12 flex__i--md-6">
+                    <h3>CON</h3>
+                    <p>most helpful 1-2 star review</p>
+                    <div class="myr-divider"></div>
+                    <!-- MAKE COMPONENT -->
+                    <div class="myr-star-review myr-star-review--3">
+                      <i class="material-icons">star_rate</i>
+                      <i class="material-icons">star_rate</i>
+                      <i class="material-icons">star_rate</i>
+                      <i class="material-icons">star_rate</i>
+                      <i class="material-icons">star_rate</i>
+                    </div>
+                    <h2><strong>Fantastic Blender</strong></h2>
+                    <p>This blender works amazingly, and blends within seconds. The single serve cups also work really well for smoothies or protein shakes!</p>
+                    <p><span class="myr-reviewer">Eric</span> April 18, 2013</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- <info-card></info-card> -->
 
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/js/app.js"></script>

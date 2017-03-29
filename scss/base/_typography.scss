@@ -1,0 +1,61 @@
+// TYPOGRAPHY
+
+// HEADLINE
+h1, h3 {
+  font-family: $font-family-headline;
+  font-weight: 700;
+  line-height: 1.15;
+
+  &.#{$ns}light {
+    font-weight: 300;
+  }
+}
+h1 {
+  font-size: 1.625rem;
+}
+h3 {
+  font-size: 1.125rem;
+}
+
+// PARAGRAPH
+p {
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+sup {
+  font-size: 1ex;
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+// BUTTONS / ANCHORS
+a {
+  color: $greyscale-01;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $brand-primary;
+    text-decoration: underline;
+  }
+  &:visited {
+    color: $greyscale-04;
+    text-decoration: none;
+  }
+}
+button {
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+// LISTS
+ul {
+  list-style: none;
+}

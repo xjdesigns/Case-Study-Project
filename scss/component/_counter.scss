@@ -1,0 +1,30 @@
+// COUNTER
+.#{$ns}counter {
+  width: 240px;
+  margin: 16px 0;
+  padding: 3px 6px 3px 10px;
+  border-radius: 3px;
+  border: 1px solid $greyscale-03;
+
+  &__title,
+  &__action {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(50% - 4px);
+  }
+
+  &__title {
+    font-size: .875rem;
+  }
+
+  &__action {
+    text-align: right;
+  }
+
+  .#{$ns}action-count {
+    width: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+  }
+}

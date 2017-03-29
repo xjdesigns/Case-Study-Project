@@ -1,0 +1,12 @@
+// HEADER
+.#{$ns}header {
+  padding: 12px;
+  margin-bottom: 36px;
+  background: $greyscale-02;
+  box-shadow: $shadow-01;
+
+  &__logo {
+    font-size: 1.125rem;
+    font-weight: 300;
+  }
+}

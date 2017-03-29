@@ -1,31 +1,32 @@
 // DEFAULT
-$btn-radius: 24px;
+$btn-radius: 3px;
 $btn-padding: 12px; // we math with this number below
 
 // BUTTON
 .#{$ns}btn {
   display: inline-block;
   vertical-align: middle;
-  min-width: 160px;
-  font-size: .875rem;
+  min-width: 237px;
+  font-size: 1.125rem;
+  font-weight: 300;
   padding: $btn-padding $btn-padding * 2;
   border-radius: $btn-radius;
-  border: 1px solid $greyscale-05;
-  background-color: transparent;
-  color: $greyscale-05;
+  border: 1px solid $greyscale-02;
+  background-color: $greyscale-02;
+  color: $greyscale-04;
   text-align: center;
   text-decoration: none;
   transition: all .3s ease;
 
   &:hover {
-    color: $greyscale-05;
+    background-color: $greyscale-03;
   }
 
   // SIZING
   &--sm {
     padding: $btn-padding / 2 $btn-padding;
-    min-width: 90px;
-    font-size: .7rem;
+    min-width: 155px;
+    font-size: .75rem;
   }
 
   // FULL WIDTH
@@ -38,8 +39,8 @@ $btn-padding: 12px; // we math with this number below
 // BUTTON CIRCLE
 .#{$ns}btn {
   &--circle {
-    min-width: 42px;
-    height: 42px;
+    min-width: 30px;
+    height: 30px;
     padding: 0;
     border-radius: 50%;
     position: relative;
@@ -47,7 +48,7 @@ $btn-padding: 12px; // we math with this number below
     &::before {
       content: attr(data-icon);
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: .8;
     }
   }
 }
@@ -55,7 +56,7 @@ $btn-padding: 12px; // we math with this number below
 // BUTTON MAP //
 $btn-map: (
 primary: $brand-primary,
-secondary: $brand-secondary
+secondary: $greyscale-01
 );
 
 @each $button, $btn in $btn-map {
@@ -63,6 +64,7 @@ secondary: $brand-secondary
     &--#{$button} {
       background-color: $btn;
       border-color: $btn;
+      color: white;
 
       &:hover {
         background-color: transparent;
