@@ -1,0 +1,47 @@
+// NAMESPACE
+$ns: 'myr-';
+
+
+// BASE SIZING
+$font-size-root: 16px;
+$font-size-base: $font-size-root;
+$line-height-base: 1.1;
+$font-family-base: helvetica, arial, sans-serif;
+$font-family-headline: helvetica, arial, sans-serif;
+
+
+// BASE GRID
+$container: 1140px; // our max width
+$gutter: 24px; // gutters = 1/2 width
+$base-columns: default; // columns
+$base-columns-default: 12;
+
+
+// BREAKPOINTS
+//breakpoints based off 16px base size
+$break-xl: 80em; // 1280
+$break-lg: 64em; // 1024
+$break-md: 48em; // 768
+$break-sm: 20em; // 320
+
+
+// BRAND COLORS
+$brand-primary: blue;
+$brand-secondary: darkblue;
+$brand-tertiary: lightblue;
+$brand-info: #04a3ff;
+$brand-success: green;
+$brand-warning: gold;
+$brand-error: red;
+
+// GREYSCALE
+$greyscale-01: #000;
+$greyscale-02: #f3f3f3;
+$greyscale-03: #575757;
+$greyscale-04: #7a7a7a;
+$greyscale-05: #fff;
+
+// LIGATURES -- ICONS
+// Resource article I wrote for css-tricks
+// https://css-tricks.com/ligature-icons/
+$liga-font-family: 'Material Icons';
