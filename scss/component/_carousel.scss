@@ -1,4 +1,77 @@
 // IMAGE CAROUSEL
 .#{$ns}img-carousel {
   margin: 50px 0 24px;
+
+  &__zoom {
+    margin: 24px auto;
+    width: 180px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      .#{$ns}zoom-img {
+        border-color: $brand-primary;
+        &::before {
+          color: $brand-primary;
+        }
+        &::after {
+          background-color: $brand-primary;
+        }
+      }
+      .#{$ns}zoom-text {
+        color: $brand-primary;
+      }
+    }
+  }
+
+  &__picker {
+    margin: 24px 0;
+  }
+}
+
+// ZOOM AREA
+.#{$ns}zoom-img {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: $greyscale-05;
+  border: 3px solid $greyscale-03;
+  transition: border-color .3s ease;
+
+  &::before {
+    content: attr(data-icon);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $greyscale-03;
+    font-size: .875rem;
+    transition: color .3s ease;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 6px;
+    right: 0;
+    margin: auto;
+    width: 20px;
+    height: 2px;
+    background-color: $greyscale-03;
+    transform: rotate(45deg);
+    transform-origin: center center;
+    transition: background-color .3s ease;
+  }
+}
+.#{$ns}zoom-text {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: .875rem;
+  margin-left: 6px;
+  transition: color .3s ease;
 }

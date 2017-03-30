@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="gameSystem">
+<html lang="en" ng-app="myRetailCaseStudy">
   <head>
     <title>myRetail Product Page</title>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
-  <body>
+  <body ng-controller="myRetailController">
 
     <nav class="myr-header" role="banner">
       <div class="myr-header__logo" aria-label="myRetail Logo">myRetail</div>
@@ -22,21 +22,17 @@
 
           <div class="flex__i--xs-12 flex__i--md-6">
             <div class="myr-item-name">
-              <h1 class="myr-light">Ninja<sup>&trade;</sup> Professional Blender with Single Servtte Blending Cups</h1>
+              <h1 class="myr-light">{{data.title}}</h1>
             </div>
 
-            <div class="myr-img-carousel">
-              <div class="myr-img">
-                <img src="http://target.scene7.com/is/image/Target/14263758" alt="Product Image 01">
-              </div>
-            </div>
+            <img-carousel ng-if=data.Images images=data.Images></img-carousel>
 
           </div>
 
           <div class="flex__i--xs-12 flex__i--md-6">
 
             <div class="myr-cart-pricing">
-              <strong class="myr-cart-pricing__price">$139.99</strong> online price
+              <strong class="myr-cart-pricing__price">{{data.Offers[0].OfferPrice[0].formattedPriceValue}}</strong> online price
             </div>
 
             <ul class="myr-item-promo">
@@ -44,23 +40,24 @@
               <li data-icon="local_offer">Lorem ipsum dolor sit amet.</li>
             </ul>
 
-            <div class="myr-counter">
-              <div class="myr-counter__title">quantity</div>
-              <div class="myr-counter__action">
-                <button class="myr-btn myr-btn--circle" data-icon="remove"></button>
-                <div class="myr-action-count"><strong>1</strong></div>
-                <button class="myr-btn myr-btn--circle" data-icon="add"></button>
-              </div>
-            </div>
+            <counter on-count-change="addCountToCart(newCount)"></counter>
 
             <div class="myr-cart-actions">
               <div class="flex">
                 <div class="flex__i--xs-12 flex__i--sm-6">
-                  <button class="myr-btn myr-btn--block myr-btn--secondary">PICK UP IN STORE</button>
+                  <button
+                    ng-click="applyPurchase()"
+                    ng-if="data.purchasingChannelCode === ('0' || '2')"
+                    class="myr-btn myr-btn--block myr-btn--secondary"
+                  >PICK UP IN STORE</button>
                   <p class="myr-store-find"><strong>find in a store</strong></p>
                 </div>
                 <div class="flex__i--xs-12 flex__i--sm-6">
-                  <button class="myr-btn myr-btn--block myr-btn--primary">ADD TO CART</button>
+                  <button
+                    ng-click="applyPurchase()"
+                    ng-if="data.purchasingChannelCode === ('0' || '1')"
+                    class="myr-btn myr-btn--block myr-btn--primary"
+                  >ADD TO CART</button>
                 </div>
               </div>
             </div>
@@ -88,16 +85,10 @@
             <div class="myr-prd-hl">
               <div class="myr-prd-hl__title">product highlights</div>
               <ul class="myr-prd-hl__list">
-                <li>01</li>
-                <li>02</li>
-                <li>03</li>
-                <li>04</li>
-                <li>05</li>
-                <li>06</li>
-                <li>07</li>
-                <li>08</li>
-                <li>09</li>
-                <li>10</li>
+                <li
+                  ng-repeat="desc in data.ItemDescription[0].features"
+                  ng-bind-html="renderHTML(desc)"
+                  ></li>
               </ul>
             </div>
 
@@ -174,7 +165,9 @@
 
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/js/app.js"></script>
-    <script src="/js/info-card/info-card.component.js"></script>
-    <script src="/js/info-detail/info-detail.component.js"></script>
+    <script src="/js/core/core.controller.js"></script>
+    <script src="/js/service/http.factory.js"></script>
+    <script src="/js/counter/counter.component.js"></script>
+    <script src="/js/carousel/img-carousel.component.js"></script>
   </body>
 </html>

@@ -1,0 +1,18 @@
+<div class="myr-img-carousel">
+  <div class="myr-img">
+    <img ng-src="{{$ctrl.currentImg}}" alt="Product Image 01">
+  </div>
+  <div class="myr-img-carousel__zoom">
+    <div class="myr-zoom-img" data-icon="add"></div>
+    <p class="myr-zoom-text">view larger</p>
+  </div>
+  <div class="myr-img-carousel__picker">
+    <button class="myr-btn myr-btn--circle" data-icon="navigate_before"></button>
+    <div class="myr-picker">
+      <div ng-repeat="img in $ctrl.altImgs" class="myr-picker__images">
+        <img ng-src="{{img.image}}" alt="{{'altImg' + $index}}">
+      </div>
+    </div>
+    <button class="myr-btn myr-btn--circle" data-icon="navigate_next"></button>
+  </div>
+</div>

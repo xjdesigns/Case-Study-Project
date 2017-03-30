@@ -1,4 +1,5 @@
-var app = angular.module('gameSystem', [
-  'infoCard',
-  'infoDetail'
+var app = angular.module('myRetailCaseStudy', [
+  'core',
+  'counter',
+  'imgCarousel'
 ]);

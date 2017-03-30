@@ -16,3 +16,7 @@ Built on Gulp, made for use with Sass.
 
 ## Testing
 `npm run e2e-test` This starts the selenium driver and runs the E2E tests. Default served on Google Chrome.
+
+
+## Browser Support
+Browser targetting is IE10>, Chrome, FF, Safari, Mobile
