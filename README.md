@@ -1,9 +1,6 @@
-# Starter Kit
+# Case Study
 
-This is a starter kit for getting a project up and running.
-Built on Gulp, made for use with Sass.
-
-`NOTE`: must have gulp installed globally
+This is a case study project. Written with Sass using BEM, Gulp, Angular 1, Protractor.
 
 `Clone` the repository and run the following commands
 

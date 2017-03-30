@@ -22,7 +22,7 @@
 
           <div class="flex__i--xs-12 flex__i--md-6">
             <div class="myr-item-name">
-              <h1 class="myr-light">{{data.title}}</h1>
+              <h1 data-id="product-title" class="myr-light">{{data.title}}</h1>
             </div>
 
             <img-carousel ng-if=data.Images images=data.Images></img-carousel>
@@ -32,7 +32,7 @@
           <div class="flex__i--xs-12 flex__i--md-6">
 
             <div class="myr-cart-pricing">
-              <strong class="myr-cart-pricing__price">{{data.Offers[0].OfferPrice[0].formattedPriceValue}}</strong> online price
+              <strong data-id="product-price" class="myr-cart-pricing__price">{{data.Offers[0].OfferPrice[0].formattedPriceValue}}</strong> online price
             </div>
 
             <ul class="myr-item-promo">

@@ -1,16 +1,18 @@
-<div class="myr-counter">
+<div class="myr-counter" data-id="product-counter">
   <div class="myr-counter__title">quantity</div>
   <div class="myr-counter__action">
     <button
       ng-click="$ctrl.counterDecrement()"
       class="myr-btn myr-btn--circle"
       data-icon="remove"
+      data-id="decrement"
     ></button>
-    <div class="myr-action-count"><strong>{{$ctrl.count}}</strong></div>
+    <div class="myr-action-count"><strong data-id="count">{{$ctrl.count}}</strong></div>
     <button
       ng-click="$ctrl.counterIncrement()"
       class="myr-btn myr-btn--circle"
       data-icon="add"
+      data-id="increment"
     ></button>
   </div>
 </div>
