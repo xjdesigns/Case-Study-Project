@@ -100,18 +100,11 @@
             <div class="myr-overall-rating">
               <div class="flex">
                 <div class="flex__i--xs-6">
-                  <!-- MAKE COMPONENT -->
-                  <div class="myr-star-review myr-star-review--5">
-                    <i class="material-icons">star_rate</i>
-                    <i class="material-icons">star_rate</i>
-                    <i class="material-icons">star_rate</i>
-                    <i class="material-icons">star_rate</i>
-                    <i class="material-icons">star_rate</i>
-                  </div>
+                  <star-rating ng-if=data.CustomerReview[0] rating=data.CustomerReview[0].consolidatedOverallRating></star-rating>
                   <span>overall</span>
                 </div>
                 <div class="flex__i--xs-6 myr-txt-r">
-                  <a href="#">view all 14 reviews</a>
+                  <a href="#">view all {{data.CustomerReview[0].totalReviews}} reviews</a>
                 </div>
               </div>
             </div>
@@ -119,37 +112,23 @@
             <div class="myr-review">
               <div class="myr-review__pc">
                 <div class="flex">
-                  <div class="flex__i--xs-12 flex__i--md-6">
-                    <h3>PRO</h3>
+                  <div ng-if="data.CustomerReview[0]" class="flex__i--xs-12 flex__i--md-6">
+                    <h3>Pro</h3>
                     <p>most helpful 4-5 star review</p>
                     <div class="myr-divider"></div>
-                    <!-- MAKE COMPONENT -->
-                    <div class="myr-star-review myr-star-review--3">
-                      <i class="material-icons">star_rate</i>
-                      <i class="material-icons">star_rate</i>
-                      <i class="material-icons">star_rate</i>
-                      <i class="material-icons">star_rate</i>
-                      <i class="material-icons">star_rate</i>
-                    </div>
-                    <h2><strong>Fantastic Blender</strong></h2>
-                    <p>This blender works amazingly, and blends within seconds. The single serve cups also work really well for smoothies or protein shakes!</p>
-                    <p><span class="myr-reviewer">Eric</span> April 18, 2013</p>
+                    <star-rating ng-if=data.CustomerReview[0] rating=data.CustomerReview[0].Pro[0].overallRating></star-rating>
+                    <h2><strong>{{data.CustomerReview[0].Pro[0].title}}</strong></h2>
+                    <p>{{data.CustomerReview[0].Pro[0].review}}</p>
+                    <p><span class="myr-reviewer">{{data.CustomerReview[0].Pro[0].screenName}}</span> {{toDate(data.CustomerReview[0].Pro[0].datePosted)}}</p>
                   </div>
-                  <div class="flex__i--xs-12 flex__i--md-6">
-                    <h3>CON</h3>
-                    <p>most helpful 1-2 star review</p>
+                  <div ng-if="data.CustomerReview[0]" class="flex__i--xs-12 flex__i--md-6">
+                    <h3>Con</h3>
+                    <p>most helpful 4-5 star review</p>
                     <div class="myr-divider"></div>
-                    <!-- MAKE COMPONENT -->
-                    <div class="myr-star-review myr-star-review--3">
-                      <i class="material-icons">star_rate</i>
-                      <i class="material-icons">star_rate</i>
-                      <i class="material-icons">star_rate</i>
-                      <i class="material-icons">star_rate</i>
-                      <i class="material-icons">star_rate</i>
-                    </div>
-                    <h2><strong>Fantastic Blender</strong></h2>
-                    <p>This blender works amazingly, and blends within seconds. The single serve cups also work really well for smoothies or protein shakes!</p>
-                    <p><span class="myr-reviewer">Eric</span> April 18, 2013</p>
+                    <star-rating ng-if=data.CustomerReview[0] rating=data.CustomerReview[0].Con[0].overallRating></star-rating>
+                    <h2><strong>{{data.CustomerReview[0].Con[0].title}}</strong></h2>
+                    <p>{{data.CustomerReview[0].Con[0].review}}</p>
+                    <p><span class="myr-reviewer">{{data.CustomerReview[0].Con[0].screenName}}</span> {{toDate(data.CustomerReview[0].Con[0].datePosted)}}</p>
                   </div>
                 </div>
               </div>
@@ -168,5 +147,6 @@
     <script src="/js/service/http.factory.js"></script>
     <script src="/js/counter/counter.component.js"></script>
     <script src="/js/carousel/img-carousel.component.js"></script>
+    <script src="/js/star-rating/star-rating.component.js"></script>
   </body>
 </html>

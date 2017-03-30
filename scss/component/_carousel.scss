@@ -57,7 +57,9 @@ $imgHeight: $imgWidth;
   cursor: pointer;
 }
 .#{$ns}picker {
+  line-height: 0;
   transition: margin-left .3s ease-in-out;
+
   &__images {
     display: inline-block;
     width: $imgWidth + 0px;
@@ -74,6 +76,47 @@ $imgHeight: $imgWidth;
     &.is-selected {
       border-color: $greyscale-04;
     }
+  }
+}
+
+// CLICK SHIELD
+.#{$ns}click-shield {
+  position: fixed;
+  top: -9999px;
+  left: -9999px;
+  right: -9999px;
+  bottom: -9999px;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+}
+
+// IMAGE MODAL
+.#{$ns}modal-img {
+  position: absolute;
+  top: 5vh;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  max-width: 460px;
+  margin: auto;
+  background-color: $greyscale-05;
+  box-shadow: $shadow-01;
+  text-align: center;
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+
+  &__close {
+    position: absolute;
+    top: 3px;
+    right: 3px;
   }
 }
 

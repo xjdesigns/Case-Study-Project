@@ -1,6 +1,6 @@
 <div class="myr-img-carousel">
   <div class="myr-img-carousel__view">
-    <div class="myr-img">
+    <div aria-live="polite" class="myr-img">
       <img ng-src="{{$ctrl.currentImg}}" alt="Product Image 01">
     </div>
   </div>
@@ -14,6 +14,7 @@
       ng-if="$ctrl.length > 3"
       class="myr-btn myr-btn--circle"
       data-icon="navigate_before"
+      aria-label="previous"
     ></button>
     <div class="myr-picker-wrap">
       <div ng-style="{'margin-left': '-' + $ctrl.offset + 'px'}" class="myr-picker">
@@ -34,6 +35,28 @@
       ng-if="$ctrl.length > 3"
       class="myr-btn myr-btn--circle"
       data-icon="navigate_next"
+      aria-label="next"
     ></button>
+  </div>
+</div>
+
+<div
+  ng-click="$ctrl.closeModal()"
+  ng-class="{'is-open': $ctrl.isOpen}"
+  class="myr-click-shield"
+  aria-live="polite"
+  aria-hidden="{{!$ctrl.isOpen}}"
+  ></div>
+<div ng-class="{'is-open': $ctrl.isOpen}" aria-hidden="{{!$ctrl.isOpen}}" class="myr-modal-img">
+  <div class="myr-modal-img__close">
+    <button
+      aria-label="close image modal"
+      ng-click="$ctrl.closeModal()"
+      class="myr-btn myr-btn--circle myr-btn--secondary"
+      data-icon="close"
+    ></button>
+  </div>
+  <div aria-live="polite" class="myr-img">
+    <img ng-src="{{$ctrl.currentImg}}" alt="Product Image 01">
   </div>
 </div>

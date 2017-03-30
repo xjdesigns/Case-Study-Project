@@ -38,6 +38,11 @@
     font-size: 1.2rem;
   }
 
+  &--1 {
+    .material-icons:nth-child(-n+1) {
+      color: $brand-primary;
+    }
+  }
   &--2 {
     .material-icons:nth-child(-n+2) {
       color: $brand-primary;

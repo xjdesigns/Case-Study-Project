@@ -35,8 +35,14 @@ core.controller('myRetailController', ['$scope', 'httpService', '$sce', function
     alert(display);
   }
 
-  // This could be a filter
+  // Below could be a filters
   $scope.renderHTML = function(code) {
     return $sce.trustAsHtml(code);
+  }
+
+  $scope.toDate = function(date) {
+    var opts = {year: 'numeric', month: 'short'};
+    var d = new Date(date);
+    return d.toLocaleDateString('en-US', opts);
   }
 }]);

@@ -13,6 +13,7 @@ function ImageCarousel() {
   var imgs = {};
   var imgWidth = 63; // match the image widths, we know from our styling
   var slide = 0;
+  crsl.isOpen = false;
   crsl.currentSlide = 0;
   crsl.offset = 0;
   crsl.currentImg;
@@ -52,6 +53,10 @@ function ImageCarousel() {
   }
 
   this.openZoomModal = function() {
-    alert('ZOOM ZOOM');
+    crsl.isOpen = true;
+  }
+
+  this.closeModal = function() {
+    crsl.isOpen = false;
   }
 }
