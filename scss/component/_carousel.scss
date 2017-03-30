@@ -2,6 +2,10 @@
 .#{$ns}img-carousel {
   margin: 50px 0 24px;
 
+  &__view {
+    text-align: center;
+  }
+
   &__zoom {
     margin: 24px auto;
     width: 180px;
@@ -26,6 +30,50 @@
 
   &__picker {
     margin: 24px 0;
+    text-align: center;
+
+    .#{$ns}btn {
+      &:first-child {
+        margin-right: 12px;
+      }
+      &:last-child {
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+// IMAGE PICKER
+$imgWidth: 63;
+$imgHeight: $imgWidth;
+.#{$ns}picker-wrap {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: $imgWidth + 0px;
+  max-width: $imgWidth * 3 + 0px;
+  height: $imgHeight + 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+.#{$ns}picker {
+  transition: margin-left .3s ease-in-out;
+  &__images {
+    display: inline-block;
+    width: $imgWidth + 0px;
+    height: $imgHeight + 0px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    overflow: hidden;
+    transition: border-color .3s ease;
+
+    &:hover {
+      border-color: $greyscale-03;
+    }
+
+    &.is-selected {
+      border-color: $greyscale-04;
+    }
   }
 }
 

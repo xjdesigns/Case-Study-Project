@@ -36,26 +36,25 @@
             </div>
 
             <ul class="myr-item-promo">
-              <li data-icon="local_offer">Lorem ipsum dolor.</li>
-              <li data-icon="local_offer">Lorem ipsum dolor sit amet.</li>
+              <li ng-repeat="promo in data.Promotions" data-icon="local_offer">
+                {{promo.Description[0].shortDescription}}
+              </li>
             </ul>
 
             <counter on-count-change="addCountToCart(newCount)"></counter>
 
             <div class="myr-cart-actions">
               <div class="flex">
-                <div class="flex__i--xs-12 flex__i--sm-6">
+                <div ng-if="data.purchasingChannelCode === ('0' || '2')" class="flex__i--xs-12 flex__i--sm-6">
                   <button
                     ng-click="applyPurchase()"
-                    ng-if="data.purchasingChannelCode === ('0' || '2')"
                     class="myr-btn myr-btn--block myr-btn--secondary"
                   >PICK UP IN STORE</button>
                   <p class="myr-store-find"><strong>find in a store</strong></p>
                 </div>
-                <div class="flex__i--xs-12 flex__i--sm-6">
+                <div ng-if="data.purchasingChannelCode === ('0' || '1')" class="flex__i--xs-12 flex__i--sm-6">
                   <button
                     ng-click="applyPurchase()"
-                    ng-if="data.purchasingChannelCode === ('0' || '1')"
                     class="myr-btn myr-btn--block myr-btn--primary"
                   >ADD TO CART</button>
                 </div>

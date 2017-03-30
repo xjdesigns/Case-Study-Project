@@ -1,18 +1,39 @@
 <div class="myr-img-carousel">
-  <div class="myr-img">
-    <img ng-src="{{$ctrl.currentImg}}" alt="Product Image 01">
+  <div class="myr-img-carousel__view">
+    <div class="myr-img">
+      <img ng-src="{{$ctrl.currentImg}}" alt="Product Image 01">
+    </div>
   </div>
-  <div class="myr-img-carousel__zoom">
+  <div ng-click="$ctrl.openZoomModal()" class="myr-img-carousel__zoom">
     <div class="myr-zoom-img" data-icon="add"></div>
     <p class="myr-zoom-text">view larger</p>
   </div>
   <div class="myr-img-carousel__picker">
-    <button class="myr-btn myr-btn--circle" data-icon="navigate_before"></button>
-    <div class="myr-picker">
-      <div ng-repeat="img in $ctrl.altImgs" class="myr-picker__images">
-        <img ng-src="{{img.image}}" alt="{{'altImg' + $index}}">
+    <button
+      ng-click="$ctrl.previousImage()"
+      ng-if="$ctrl.length > 3"
+      class="myr-btn myr-btn--circle"
+      data-icon="navigate_before"
+    ></button>
+    <div class="myr-picker-wrap">
+      <div ng-style="{'margin-left': '-' + $ctrl.offset + 'px'}" class="myr-picker">
+        <div
+          ng-click="$ctrl.selectImage($index)"
+          ng-repeat="img in $ctrl.altImgs"
+          ng-class="{'is-selected': $index === $ctrl.currentSlide}"
+          class="myr-picker__images"
+        >
+          <div class="myr-img">
+            <img ng-src="{{img.image}}" alt="{{'altImg' + $index}}">
+          </div>
+        </div>
       </div>
     </div>
-    <button class="myr-btn myr-btn--circle" data-icon="navigate_next"></button>
+    <button
+      ng-click="$ctrl.nextImage()"
+      ng-if="$ctrl.length > 3"
+      class="myr-btn myr-btn--circle"
+      data-icon="navigate_next"
+    ></button>
   </div>
 </div>
