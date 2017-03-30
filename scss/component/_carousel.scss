@@ -32,12 +32,14 @@
     margin: 24px 0;
     text-align: center;
 
-    .#{$ns}btn {
-      &:first-child {
-        margin-right: 12px;
-      }
-      &:last-child {
-        margin-left: 12px;
+    @media(min-width: $break-sm) {
+      .#{$ns}btn {
+        &:first-child {
+          margin-right: 12px;
+        }
+        &:last-child {
+          margin-left: 12px;
+        }
       }
     }
   }
@@ -103,11 +105,15 @@ $imgHeight: $imgWidth;
   right: 0;
   z-index: 1000;
   max-width: 460px;
-  margin: auto;
+  margin: 0 12px;
   background-color: $greyscale-05;
   box-shadow: $shadow-01;
   text-align: center;
   display: none;
+
+  @media(min-width: $break-sm) {
+    margin: auto;
+  }
 
   &.is-open {
     display: block;

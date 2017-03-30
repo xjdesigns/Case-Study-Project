@@ -1,24 +1,42 @@
 // COUNTER
 .#{$ns}counter {
-  width: 240px;
+  width: 100%;
   margin: 16px 0;
   padding: 3px 6px 3px 10px;
   border-radius: 3px;
   border: 1px solid $greyscale-03;
 
+  @media(min-width: $break-sm) {
+    width: 240px;
+  }
+
   &__title,
   &__action {
-    display: inline-block;
-    vertical-align: middle;
-    width: calc(50% - 4px);
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+
+    @media(min-width: $break-md) {
+      display: inline-block;
+      vertical-align: middle;
+      width: calc(50% - 4px);
+      margin: 0;
+    }
   }
 
   &__title {
     font-size: .875rem;
+
+    @media(min-width: $break-md) {
+      text-align: left;
+    }
   }
 
   &__action {
-    text-align: right;
+    @media(min-width: $break-md) {
+      text-align: right;
+    }
   }
 
   .#{$ns}action-count {
