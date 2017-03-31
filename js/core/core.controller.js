@@ -15,7 +15,6 @@ core.controller('myRetailController', ['$scope', 'httpService', '$sce', function
     httpService.async()
       .then(function success(d) {
         $scope.data = d.data.CatalogEntryView[0];
-        console.warn('OUR SCOPE DATA', $scope.data);
       }, function error(error) {
         $scope.error = {message: error.data || 'Not Found!', status: error.status};
         console.error('Http call failed!', $scope.error);
