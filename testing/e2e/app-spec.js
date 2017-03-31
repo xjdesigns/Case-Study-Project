@@ -33,9 +33,9 @@ describe('myRetail App Case Study::', function() {
 
   it('should change the down count once', function() {
     var ct = element(by.css('[data-id=product-counter]'));
-    var up = ct.element(by.css('[data-id=decrement]'));
+    var dwn = ct.element(by.css('[data-id=decrement]'));
     var count = ct.element(by.css('[data-id=count]'));
-    up.click();
+    dwn.click();
     expect(count.getText()).toEqual('1');
   });
 
