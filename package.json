@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run serve",
-    "test": "test",
+    "test": "karma start",
     "e2e-test": "(webdriver-manager start &) && protractor conf.js",
     "serve": "gulp serve"
   },
   "author": "Jason Jacobson",
   "license": "MIT",
   "devDependencies": {
+    "angular-mocks": "^1.6.4",
     "autoprefixer": "^6.7.7",
     "browser-sync": "^2.18.8",
     "gulp": "^3.9.1",
@@ -20,6 +21,11 @@
     "gulp-postcss": "^6.4.0",
     "gulp-sass": "^3.1.0",
     "gulp-watch": "^4.3.11",
+    "jasmine-core": "^2.5.2",
+    "karma-coverage": "^0.3.1",
+    "karma-jasmine": "^0.3.5",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-ng-html2js-preprocessor": "^0.1.2",
     "require-dir": "^0.3.1"
   },
   "dependencies": {

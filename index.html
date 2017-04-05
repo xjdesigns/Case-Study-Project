@@ -45,14 +45,14 @@
 
             <div class="myr-cart-actions">
               <div class="flex">
-                <div ng-if="data.purchasingChannelCode === ('0' || '2')" class="flex__i--xs-12 flex__i--sm-6">
+                <div ng-if="data.purchasingChannelCode === '2' || data.purchasingChannelCode === '0'" class="flex__i--xs-12 flex__i--sm-6">
                   <button
                     ng-click="applyPurchase()"
                     class="myr-btn myr-btn--block myr-btn--secondary"
                   >PICK UP IN STORE</button>
                   <p class="myr-store-find"><strong>find in a store</strong></p>
                 </div>
-                <div ng-if="data.purchasingChannelCode === ('0' || '1')" class="flex__i--xs-12 flex__i--sm-6">
+                <div ng-if="data.purchasingChannelCode === '1' || data.purchasingChannelCode === '0'" class="flex__i--xs-12 flex__i--sm-6">
                   <button
                     ng-click="applyPurchase()"
                     class="myr-btn myr-btn--block myr-btn--primary"
@@ -119,7 +119,7 @@
                     <star-rating ng-if=data.CustomerReview[0] rating=data.CustomerReview[0].Pro[0].overallRating></star-rating>
                     <h2><strong>{{data.CustomerReview[0].Pro[0].title}}</strong></h2>
                     <p>{{data.CustomerReview[0].Pro[0].review}}</p>
-                    <p><span class="myr-reviewer">{{data.CustomerReview[0].Pro[0].screenName}}</span> {{toDate(data.CustomerReview[0].Pro[0].datePosted)}}</p>
+                    <p><span class="myr-reviewer">{{data.CustomerReview[0].Pro[0].screenName}}</span> {{data.CustomerReview[0].Pro[0].datePosted | dateFormat}}</p>
                   </div>
                   <div ng-if="data.CustomerReview[0]" class="flex__i--xs-12 flex__i--md-6">
                     <h3>Con</h3>
@@ -128,7 +128,7 @@
                     <star-rating ng-if=data.CustomerReview[0] rating=data.CustomerReview[0].Con[0].overallRating></star-rating>
                     <h2><strong>{{data.CustomerReview[0].Con[0].title}}</strong></h2>
                     <p>{{data.CustomerReview[0].Con[0].review}}</p>
-                    <p><span class="myr-reviewer">{{data.CustomerReview[0].Con[0].screenName}}</span> {{toDate(data.CustomerReview[0].Con[0].datePosted)}}</p>
+                    <p><span class="myr-reviewer">{{data.CustomerReview[0].Con[0].screenName}}</span> {{data.CustomerReview[0].Con[0].datePosted | dateFormat}}</p>
                   </div>
                 </div>
               </div>
@@ -146,5 +146,6 @@
     <script src="/js/counter/counter.component.js"></script>
     <script src="/js/carousel/img-carousel.component.js"></script>
     <script src="/js/star-rating/star-rating.component.js"></script>
+    <script src="/js/filter/date.filter.js"></script>
   </body>
 </html>
