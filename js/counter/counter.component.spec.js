@@ -9,12 +9,11 @@ describe('Component: counter', function () {
   }));
 
   it('should expose a `counter` object', function() {
-    // Here we are passing actual bindings to the component
-    var bindings = {onCountChange: 'Wolverine'};
+    var bindings = {onCountChange: 0};
     var ctrl = $componentController('counter', null, bindings);
 
     expect(ctrl.onCountChange).toBeDefined();
-    expect(ctrl.onCountChange).toBe('Wolverine');
+    expect(ctrl.onCountChange).toBe(0);
   });
 
   it('should call the `onCountChange` binding, when decrementing the counter', function() {
