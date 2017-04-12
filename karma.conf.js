@@ -19,6 +19,8 @@ module.exports = function(config) {
       'node_modules/angular-mocks/angular-mocks.js',
       'js/**/*.spec.js',
       'js/**/*.component.js',
+      'js/**/*.module.js',
+      'js/**/*.directive.js',
       'js/**/*.component.html'
     ],
 

@@ -10,6 +10,8 @@ core.controller('myRetailController', ['$scope', 'httpService', '$sce', function
   // setup our data object
   $scope.data = {};
 
+  $scope.jason = '5-5-5';
+
   // initialze the app and get our data
   this.$onInit = function() {
     httpService.async()
@@ -20,6 +22,10 @@ core.controller('myRetailController', ['$scope', 'httpService', '$sce', function
         console.error('Http call failed!', $scope.error);
       });
   }
+
+  $scope.$watch('jason', function(newVal) {
+    console.warn('new val changed', newVal);
+  });
 
   $scope.addCountToCart = function(newCount) {
     $scope.cart.amountToPurchase = newCount;

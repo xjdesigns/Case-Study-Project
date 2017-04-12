@@ -3,5 +3,6 @@ var app = angular.module('myRetailCaseStudy', [
   'counter',
   'imgCarousel',
   'starRating',
-  'dateFilter'
+  'dateFilter',
+  'ppidInput'
 ]);
