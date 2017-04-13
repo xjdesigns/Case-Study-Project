@@ -8,11 +8,14 @@ angular.module('ppidInput')
       require: 'ngModel',
       templateUrl: 'js/directive/ppid-input.directive.html',
       link: function(scope, element, attrs) {
-        scope.$watch('jason', function(val) {
-          scope.jason = ppidValSet(val);
+        scope.$watch('jason', function(val, old) {
+          if (val === old) {
+            return;
+          }
+          scope.jason = scope.ppidValSet(val);
         });
 
-        function ppidValSet(val) {
+        scope.ppidValSet = function(val) {
           var a = val.split('-');
           a[0] = idValidationSet(a[0], 3);
           a[1] = idValidationSet(a[1], 2);

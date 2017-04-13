@@ -18,10 +18,11 @@ module.exports = function(config) {
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'js/**/*.spec.js',
-      'js/**/*.component.js',
       'js/**/*.module.js',
+      'js/**/*.component.js',
       'js/**/*.directive.js',
-      'js/**/*.component.html'
+      'js/**/*.component.html',
+      'js/**/*.directive.html'
     ],
 
 
@@ -33,14 +34,14 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.html': ['ng-html2js']
+      '**/*.html': ['ng-html2js']
     },
 
     ngHtml2JsPreprocessor: {
       // strip this from the file path
-      stripPrefix: 'js/',
+      stripPrefix: '',
       // create a single module that contains templates from all the files
-      moduleName: 'templates'
+      moduleName: 'app.templates'
     },
 
 

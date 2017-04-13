@@ -1,23 +1,39 @@
-// describe('ppid input directive test::', function() {
-//   var $compile,
-//       $rootScope;
-//
-//   beforeEach(module('ppidInput'));
-//
-//   beforeEach(inject(function(_$compile_, _$rootScope_){
-//     // The injector unwraps the underscores (_) from around the parameter names when matching
-//     $compile = _$compile_;
-//     $rootScope = _$rootScope_;
-//   }));
-//
-//   it('Replaces the element with the appropriate content', function() {
-//     // Compile a piece of HTML containing the directive
-//     var element = $compile("<div ppid-input></div>")($rootScope);
-//     var input = element.find('input');
-//     // fire all the watches, so the scope expression {{1 + 1}} will be evaluated
-//     $rootScope.$digest();
-//     // // Check that the compiled element contains the templated content
-//     // expect(element.html()).toContain("lidless, wreathed in flame, 2 times");
-//     expect(input).toBeDefined();
-//   });
-// });
+describe('ppid input directive test::', function() {
+  var $compile,
+      $rootScope,
+      element,
+      a;
+
+  beforeEach(module('ppidInput', 'app.templates'));
+
+  beforeEach(inject(function(_$compile_, _$rootScope_){
+    // The injector unwraps the underscores (_) from around the parameter names when matching
+    $compile = _$compile_;
+    $rootScope = _$rootScope_;
+    $rootScope.myUnit = '5-55-5';
+
+    element = $compile("<div ppid-input ng-model=\"mysUnit\"></div>")($rootScope);
+    a = '4-44-4';
+    $rootScope.$digest();
+  }));
+
+  it('Replaces the element with the appropriate content', function() {
+    var input = element.find('input');
+    expect(input).toBeDefined();
+  });
+
+  it('should change the id', function() {
+    var iso = element.isolateScope();
+
+    spyOn(iso, 'ppidValSet');
+    iso.ppidValSet(a);
+    expect(iso.ppidValSet).toHaveBeenCalledWith(a);
+  });
+
+  it('ppidValSet:: method', function() {
+    var isoo = element.isolateScope();
+    var val = '3-3-3';
+    var newVal = isoo.ppidValSet(val);
+    expect(newVal).toBe('003-03-003');
+  });
+});
