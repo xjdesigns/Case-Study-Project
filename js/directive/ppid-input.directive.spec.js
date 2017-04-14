@@ -32,6 +32,7 @@ describe('ppid input directive test::', function() {
 
   it('ppidValSet:: method', function() {
     var isoo = element.isolateScope();
+
     var val = '3-3-3';
     var newVal = isoo.ppidValSet(val);
     expect(newVal).toBe('003-03-003');

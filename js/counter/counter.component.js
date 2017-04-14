@@ -1,4 +1,6 @@
-var counter = angular.module('counter', []);
+var counter = angular.module('counter', [
+  'alertService'
+]);
 
 counter.component('counter', {
   templateUrl: 'js/counter/counter.component.html',
@@ -8,7 +10,7 @@ counter.component('counter', {
   }
 });
 
-function CounterController() {
+function CounterController($scope, alertService) {
   var c = this;
   c.count = c.count || 0;
   c.maxCount = 20;
@@ -19,6 +21,7 @@ function CounterController() {
     }
     c.count = ++c.count;
     this.onCountChange({newCount: c.count});
+    alertService.add("success", "Count has incremented", '1000');
   }
   c.counterDecrement = function() {
     if (c.count <= 0) {

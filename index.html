@@ -11,9 +11,17 @@
   </head>
   <body ng-controller="myRetailController">
 
+    <div>
+      <alert ng-repeat="alert in alerts" type="alert.type" msg="alert.msg" close="alert.close()"></alert>
+    </div>
+
     <nav class="myr-header" role="banner">
       <div class="myr-header__logo" aria-label="myRetail Logo">myRetail</div>
     </nav>
+
+    <div class="tg">
+      <div class="tg__logo"></div>
+    </div>
 
     <div ppid-input ng-model="jason"></div>
 
@@ -151,5 +159,8 @@
     <script src="/js/filter/date.filter.js"></script>
     <script src="/js/directive/ppid-input.module.js"></script>
     <script src="/js/directive/ppid-input.directive.js"></script>
+    <script src="/js/alert/alert.module.js"></script>
+    <script src="/js/alert/alert.service.js"></script>
+    <script src="/js/alert/alert.component.js"></script>
   </body>
 </html>

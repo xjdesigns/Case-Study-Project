@@ -21,6 +21,7 @@ module.exports = function(config) {
       'js/**/*.module.js',
       'js/**/*.component.js',
       'js/**/*.directive.js',
+      'js/**/*.service.js',
       'js/**/*.component.html',
       'js/**/*.directive.html'
     ],

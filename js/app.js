@@ -4,5 +4,6 @@ var app = angular.module('myRetailCaseStudy', [
   'imgCarousel',
   'starRating',
   'dateFilter',
-  'ppidInput'
+  'ppidInput',
+  'alertService'
 ]);

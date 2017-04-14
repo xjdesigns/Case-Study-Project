@@ -1,9 +1,10 @@
 var core = angular.module('core', [
-  'httpService'
+  'httpService',
+  'alertService'
 ]);
 
 // For demo purposes only on component outputs
-core.controller('myRetailController', ['$scope', 'httpService', '$sce', function myRetailController($scope, httpService, $sce) {
+core.controller('myRetailController', ['$rootScope', '$scope', 'httpService', '$sce', 'alertService', function myRetailController($rootScope, $scope, httpService, $sce, alertService) {
   $scope.cart = {
     amountToPurchase: 0
   }
@@ -11,6 +12,8 @@ core.controller('myRetailController', ['$scope', 'httpService', '$sce', function
   $scope.data = {};
 
   $scope.jason = '5-5-5';
+
+  $rootScope.closeAlert = alertService.closeAlert;
 
   // initialze the app and get our data
   this.$onInit = function() {
